@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+        h1{
+            text-align:center;
+            background-color: #4c6aaf;
+            color: white;
+            font-size: 40px;  /* 調整文字大小 */
+            font-weight: bold;  /* 加粗文字 */
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        label {
+            font-size: 25px;
+            display: block;
+            margin-bottom: 8px;
+        }
+        div{
+            font-size: 25px;
+        }
+        input{
+            width: 100%;
+            font-size: 25px;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            font-weight: bold;
+            font-size: 25px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        b{    
+            font-size: 20px;
+            display: block;
+            margin-bottom: 8px;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #dc3545;
+        }
+        img {
+            display: block;
+            margin: auto;
+            border: 1px solid black;
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>醫療預約平台</h1>
+
+<form action="reservation.php" method="post">
+    <label for="todayDate">今天日期：
+        <script>
+        todayDate = new Date().toLocaleDateString();
+        document.write(todayDate);
+        </script>
+
+    </label>
+    <label for="name">身分證字號:</label>
+    <input type="text" name="rId" pattern="^[A-Za-z][12]\d{8}$" required>
+    <input type="submit" value="進入">
+    <br>
+        <b>※ 請注意：</b>
+    <br>
+        <b>週六下午及週日全天該時段為診所休診時間</b><br>
+        <b>可預約日期區間為一個月，請不要預約太後面的日期</b>
+    <img src="診所休診時間.png" border="1" height="100%" width="100%" alt="診所休診">
+</form>
+</body>
+</html>
